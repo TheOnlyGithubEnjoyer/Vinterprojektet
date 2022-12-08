@@ -12,7 +12,6 @@ public class Map
     {
         player.Update();
         asteroid.Update();
-        
     }
     public void Draw()
     {
