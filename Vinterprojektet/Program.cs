@@ -6,6 +6,7 @@ Raylib.SetTargetFPS(60);
 Raylib.InitWindow(800, 600, "Asteroid Game");
 
 Player myplayer = new Player();
+Texture2D playerImage = Raylib.LoadTexture("Arrow.png");
 Rectangle rect = new Rectangle(400, 300, 50, 50);
 
 
@@ -18,7 +19,6 @@ Vector2 movement = new Vector2();
 bool undoX = false;
 bool undoY = false;
 
-string level = "1";
 
 while (!Raylib.WindowShouldClose())
 {
@@ -26,8 +26,7 @@ while (!Raylib.WindowShouldClose())
     undoX = false;
     undoY = false;
 
-    if (level == "1")
-    {
+    
     movement = ReadMovement(speed); 
     rect.x += movement.X;
     rect.y += movement.Y;
@@ -40,7 +39,7 @@ while (!Raylib.WindowShouldClose())
     {
         undoY = true;  //rect.y -= movement.Y;
 
-    }
+    
 }
 
 if (undoX == true) rect.x -= movement.X;
@@ -53,11 +52,10 @@ if (undoY == true) rect.y -= movement.Y;
 
     Raylib.BeginDrawing();
     
-    if (level == "1")
-    {
-        Raylib.DrawRectangleRec(rect, Color.WHITE);
 
-    }
+        Raylib.DrawTexture(playerImage, (int)rect.x, (int)rect.y, Color.WHITE);
+
+    
 
     Raylib.ClearBackground(Color.BLACK);
 
