@@ -48,13 +48,11 @@ public class Player : GameObject
         if (rect.y < 0 || rect.y + rect.height > Raylib.GetScreenHeight())
         {
             moveY = true; //rect.y -= movement.Y;
-
-
         }
 
         if (moveX == true) rect.x -= movement.X;
         if (moveY == true) rect.y -= movement.Y;
-
+    
     
     static Vector2 ReadMovement(float speed)  //static Rectangle ReadMovement(Rectangle rect, float speed)
     {
@@ -68,6 +66,7 @@ public class Player : GameObject
     }
 }
 }
+
 
 
 
