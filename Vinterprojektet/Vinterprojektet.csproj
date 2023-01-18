@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Raylib-cs" Version="4.2.0.1" />
+    <PackageReference Include="RestSharp" Version="108.0.3" />
   </ItemGroup>
 
 </Project>
