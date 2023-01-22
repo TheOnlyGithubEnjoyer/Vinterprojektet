@@ -1,7 +1,7 @@
 
 public class Player : GameObject
 {
-    // Speed, Position, Picture, Hitbox, HP
+    
 
     public string name { get; set; }
     public string max_atmosphering_speed
@@ -29,7 +29,8 @@ public class Player : GameObject
 
     public override void Update()
     {
-
+        Raylib.DrawRectangle(7, 9, 177, 20, Color.BEIGE);
+        Raylib.DrawText(name, 10, 10, 20, Color.WHITE);
         Raylib.DrawTexture(playerImage, (int)rect.x, (int)rect.y, Color.WHITE);
 
         bool moveX = false;

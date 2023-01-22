@@ -1,8 +1,8 @@
 
+
 public class Player2 : GameObject
 {
-    // Speed, Position, Picture, Hitbox, HP
-
+   
     public string name { get; set; }
     public string max_atmosphering_speed
     {
@@ -20,15 +20,17 @@ public class Player2 : GameObject
     private float speed;
 
     Texture2D player2Image = Raylib.LoadTexture("Spaceship.png");
-    Rectangle rect2 = new Rectangle(400, 300, 50, 50);
+    Rectangle rect = new Rectangle(400, 300, 50, 50);
 
     // float speed = "max_atmosphering_speed";
+
 
     Vector2 movement2 = new Vector2();
 
     public override void Update()
     {
-
+        Raylib.DrawRectangle(7, 9, 158, 20, Color.BEIGE);
+        Raylib.DrawText(name, 10, 10, 20, Color.WHITE);   // API name gets put into the game
         Raylib.DrawTexture(player2Image, (int)rect.x, (int)rect.y, Color.WHITE);
 
         bool moveX = false;
@@ -66,3 +68,5 @@ public class Player2 : GameObject
         return movement;
     }
 }
+
+

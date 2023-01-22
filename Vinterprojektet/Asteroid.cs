@@ -1,6 +1,6 @@
 public class Asteroid: GameObject
 {
-List<Rectangle> Asteroids = new List<Rectangle>();
+public List<Rectangle> Asteroids = new List<Rectangle>();
 List<float> AsteroidSpeed = new List<float>();
 Random generator = new Random();
 Texture2D AsteroidImage = Raylib.LoadTexture("Rock.png");
