@@ -3,17 +3,18 @@ public class Asteroid: GameObject
 List<Rectangle> Asteroids = new List<Rectangle>();
 List<float> AsteroidSpeed = new List<float>();
 Random generator = new Random();
+Texture2D AsteroidImage = Raylib.LoadTexture("Rock.png");
 
     public Asteroid()
     {
-    for (int i = 0; i < 15; i++)
+    for (int i = 0; i < 12; i++)
     {
     int x = generator.Next (Raylib.GetScreenWidth());
     int y = generator.Next (Raylib.GetScreenHeight());
-    int size = generator.Next(20, 40);
+    int size = generator.Next(35, 45);
     Asteroids.Add(new Rectangle (x, y, size, size));
-
-    float speed = (float) (generator.NextDouble() + 0.5);
+    
+    float speed = (float) (generator.NextDouble() + 4);
     AsteroidSpeed.Add(speed);
     }
     }
@@ -22,18 +23,21 @@ Random generator = new Random();
 
       for (int i = 0; i < Asteroids.Count; i++)
     {
-    Rectangle ast = Asteroids[i];
-    ast.y += AsteroidSpeed[i];
+    Rectangle rectangle = Asteroids[i];
+    rectangle.y += AsteroidSpeed[i];
 
-    if (ast.y > Raylib.GetScreenHeight())
+    if (rectangle.y > Raylib.GetScreenHeight())
     {
-        ast.y = -15;
+        int x = generator.Next (Raylib.GetScreenWidth());
+        rectangle.y = -15;
+        rectangle.x = x;
     }
-    Asteroids[i] = ast;
+    Asteroids[i] = rectangle;
 
-    Raylib.DrawRectangleRec(Asteroids[i], Color.GRAY);
-    }
+    Raylib.DrawTexture(AsteroidImage, (int)rectangle.x, (int)rectangle.y, Color.WHITE);
+    
         }
     }
+}
   
 

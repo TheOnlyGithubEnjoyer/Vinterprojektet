@@ -2,7 +2,7 @@
 public class Player : GameObject
 {
     // Speed, Position, Picture, Hitbox, HP
-     
+
     public string name { get; set; }
     public string max_atmosphering_speed
     {
@@ -13,10 +13,11 @@ public class Player : GameObject
         set
         {
             float.TryParse(value, out speed);
+            speed *= 0.005f;
         }
     }
 
-     private float speed;
+    private float speed;
 
 
     Texture2D playerImage = Raylib.LoadTexture("Arrow.png");
@@ -28,7 +29,7 @@ public class Player : GameObject
 
     public override void Update()
     {
-        
+
         Raylib.DrawTexture(playerImage, (int)rect.x, (int)rect.y, Color.WHITE);
 
         bool moveX = false;
@@ -37,7 +38,7 @@ public class Player : GameObject
         moveX = false;
         moveY = false;
 
-        movement = ReadMovement(speed); 
+        movement = ReadMovement();
         rect.x += movement.X;
         rect.y += movement.Y;
 
@@ -52,9 +53,10 @@ public class Player : GameObject
 
         if (moveX == true) rect.x -= movement.X;
         if (moveY == true) rect.y -= movement.Y;
-    
-    
-    static Vector2 ReadMovement(float speed)  //static Rectangle ReadMovement(Rectangle rect, float speed)
+
+
+    }
+    Vector2 ReadMovement()  //static Rectangle ReadMovement(Rectangle rect, float speed)
     {
         Vector2 movement = new Vector2();
         if (Raylib.IsKeyDown(KeyboardKey.KEY_W)) movement.Y = -speed;
@@ -64,7 +66,6 @@ public class Player : GameObject
 
         return movement;
     }
-}
 }
 
 

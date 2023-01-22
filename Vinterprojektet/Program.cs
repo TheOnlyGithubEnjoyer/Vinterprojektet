@@ -18,7 +18,6 @@ while (!Raylib.WindowShouldClose())
 
     Raylib.BeginDrawing();
 
-
     space.Draw();
 
     Raylib.EndDrawing();

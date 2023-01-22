@@ -1,8 +1,7 @@
 
 public class Map
 {
-
-m();
+    public int level = 1;
     private Player player;
     private Asteroid asteroid;
     public Map()
@@ -24,25 +23,37 @@ m();
         {
             Console.WriteLine("What?");
         }
-
-
-
-
-        player = new Player();
+        // player = new Player();
         asteroid = new Asteroid();
+        
     }
+    
     public void Update()
     {
+        //     if (Raylib.CheckCollisionRecs(player.rect, Asteroids[i]))
+        // {
+        //     level = 2;
+        // }
         player.Update();
         asteroid.Update();
+
     }
     public void Draw()
     {
-
+        if (level == 1)
+        {
         Raylib.ClearBackground(Color.BLACK);
 
         player.Draw();
         asteroid.Draw();
+        
+        }
+        if (level == 2)
+        {
+            Raylib.ClearBackground(Color.BLACK);
+            Raylib.DrawText("GAME OVER", 10, 10, 10, Color.WHITE);
+        }
+  
     }
 }
 
