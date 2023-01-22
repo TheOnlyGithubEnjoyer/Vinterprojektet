@@ -9,16 +9,19 @@ Raylib.SetTargetFPS(60);
 Raylib.InitWindow(800, 600, "Asteroid Game");
 
 Map space = new Map();
+Map2 space2 = new Map2();
 
 while (!Raylib.WindowShouldClose())
 {
 
     //LOGIK
-    space.Update();
+    // space.Update();
+    space2.Update();
 
     Raylib.BeginDrawing();
 
-    space.Draw();
+    space2.Draw();
+    // space.Draw();
 
     Raylib.EndDrawing();
 

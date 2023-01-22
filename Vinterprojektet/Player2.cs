@@ -1,5 +1,5 @@
 
-public class Player : GameObject
+public class Player2 : GameObject
 {
     // Speed, Position, Picture, Hitbox, HP
 
@@ -19,18 +19,17 @@ public class Player : GameObject
 
     private float speed;
 
-
-    Texture2D playerImage = Raylib.LoadTexture("Mil.png");
-    Rectangle rect = new Rectangle(400, 300, 50, 50);
+    Texture2D player2Image = Raylib.LoadTexture("Spaceship.png");
+    Rectangle rect2 = new Rectangle(400, 300, 50, 50);
 
     // float speed = "max_atmosphering_speed";
 
-    Vector2 movement = new Vector2();
+    Vector2 movement2 = new Vector2();
 
     public override void Update()
     {
 
-        Raylib.DrawTexture(playerImage, (int)rect.x, (int)rect.y, Color.WHITE);
+        Raylib.DrawTexture(player2Image, (int)rect.x, (int)rect.y, Color.WHITE);
 
         bool moveX = false;
         bool moveY = false;
@@ -38,9 +37,9 @@ public class Player : GameObject
         moveX = false;
         moveY = false;
 
-        movement = ReadMovement();
-        rect.x += movement.X;
-        rect.y += movement.Y;
+        movement2 = ReadMovement();
+        rect.x += movement2.X;
+        rect.y += movement2.Y;
 
         if (rect.x < 0 || rect.x + rect.width > Raylib.GetScreenWidth())
         {
@@ -51,8 +50,8 @@ public class Player : GameObject
             moveY = true; //rect.y -= movement.Y;
         }
 
-        if (moveX == true) rect.x -= movement.X;
-        if (moveY == true) rect.y -= movement.Y;
+        if (moveX == true) rect.x -= movement2.X;
+        if (moveY == true) rect.y -= movement2.Y;
 
 
     }
@@ -67,8 +66,3 @@ public class Player : GameObject
         return movement;
     }
 }
-
-
-
-
-

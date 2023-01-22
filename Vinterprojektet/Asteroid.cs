@@ -7,20 +7,22 @@ Texture2D AsteroidImage = Raylib.LoadTexture("Rock.png");
 
     public Asteroid()
     {
-    for (int i = 0; i < 12; i++)
+    for (int i = 0; i < 18; i++)
     {
     int x = generator.Next (Raylib.GetScreenWidth());
     int y = generator.Next (Raylib.GetScreenHeight());
     int size = generator.Next(35, 45);
-    Asteroids.Add(new Rectangle (x, y, size, size));
+    Asteroids.Add(new Rectangle (x, y, size, size));            // Randomly create asteroids
     
     float speed = (float) (generator.NextDouble() + 4);
     AsteroidSpeed.Add(speed);
     }
     }
+    
         public override void Update()
         {
 
+        
       for (int i = 0; i < Asteroids.Count; i++)
     {
     Rectangle rectangle = Asteroids[i];
@@ -28,8 +30,8 @@ Texture2D AsteroidImage = Raylib.LoadTexture("Rock.png");
 
     if (rectangle.y > Raylib.GetScreenHeight())
     {
-        int x = generator.Next (Raylib.GetScreenWidth());
-        rectangle.y = -15;
+        int x = generator.Next (Raylib.GetScreenWidth());   // Every Asteroid spawns in a different x-value
+        rectangle.y = -8;
         rectangle.x = x;
     }
     Asteroids[i] = rectangle;
@@ -37,6 +39,7 @@ Texture2D AsteroidImage = Raylib.LoadTexture("Rock.png");
     Raylib.DrawTexture(AsteroidImage, (int)rectangle.x, (int)rectangle.y, Color.WHITE);
     
         }
+        
     }
 }
   
