@@ -23,7 +23,7 @@ Texture2D AsteroidImage = Raylib.LoadTexture("Rock.png");
         {
 
         
-      for (int i = 0; i < Asteroids.Count; i++)
+    for (int i = 0; i < Asteroids.Count; i++)
     {
     Rectangle rectangle = Asteroids[i];
     rectangle.y += AsteroidSpeed[i];
@@ -38,7 +38,7 @@ Texture2D AsteroidImage = Raylib.LoadTexture("Rock.png");
 
     Raylib.DrawTexture(AsteroidImage, (int)rectangle.x, (int)rectangle.y, Color.WHITE);
     
-        }
+    }
         
     }
 }

@@ -1,7 +1,6 @@
 public class GameObject
 {
     public Rectangle rect;
-
     protected Color color;
     public GameObject()
     {

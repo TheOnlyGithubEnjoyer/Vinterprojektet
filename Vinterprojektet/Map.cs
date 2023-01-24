@@ -4,7 +4,7 @@ public class Map
     
     private Player player;
     private Asteroid asteroid;
-    string level = "1";
+    public string level = "1";
     public Map()
     {
 
@@ -28,22 +28,21 @@ public class Map
 
         // player = new Player();
         asteroid = new Asteroid();
-        
     }
     
     public void Update()
     {
         // Player2.Update();
-        if (Raylib.CheckCollisionRecs(player.rect, asteroid.rect))
-        {
-            level = "2";
-        }
         player.Update();
         asteroid.Update();
-
     }
     public void Draw()
     {
+        
+        // if (Raylib.CheckCollisionRecs(player.rect, asteroid.Asteroids[i]))
+        // {
+        //     level = "2";
+        // }
         if (level == "1")
         {
         Raylib.ClearBackground(Color.BLACK);

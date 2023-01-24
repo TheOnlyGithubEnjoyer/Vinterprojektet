@@ -10,7 +10,6 @@ public class Map2
 public Map2()
 {
 
-
         RestClient shipClient = new("https://swapi.py4e.com/api/");
         RestRequest request = new("starships/2/");
         RestResponse response = shipClient.GetAsync(request).Result;
@@ -23,14 +22,12 @@ public Map2()
 
             Console.WriteLine(response.Content);
         }
-
         else
         {
             Console.WriteLine("What?");
         }
 
         asteroid = new Asteroid();
-
 
 }
 
