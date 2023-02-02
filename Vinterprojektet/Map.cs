@@ -25,24 +25,25 @@ public class Map
         {
             Console.WriteLine("What?");
         }
-
         // player = new Player();
         asteroid = new Asteroid();
     }
     
     public void Update()
     {
+         for (int i = 0; i < 0; i++)
+    {
+        if (Raylib.CheckCollisionRecs(player.rect, asteroid.Asteroids[i]))
+        {
+            level = "2";
+        }
+    }
         // Player2.Update();
         player.Update();
         asteroid.Update();
     }
     public void Draw()
     {
-        
-        // if (Raylib.CheckCollisionRecs(player.rect, asteroid.Asteroids[i]))
-        // {
-        //     level = "2";
-        // }
         if (level == "1")
         {
         Raylib.ClearBackground(Color.BLACK);
