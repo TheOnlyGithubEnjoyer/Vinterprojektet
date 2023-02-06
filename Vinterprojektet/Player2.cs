@@ -22,9 +22,6 @@ public class Player2 : GameObject
     Texture2D player2Image = Raylib.LoadTexture("Spaceship.png");
     Rectangle rect2 = new Rectangle(400, 300, 50, 50);
 
-    // float speed = "max_atmosphering_speed";
-
-
     Vector2 movement2 = new Vector2();
 
     public override void Update()
@@ -40,7 +37,7 @@ public class Player2 : GameObject
         moveY = false;
 
         movement2 = ReadMovement();
-        rect2.x += movement2.X;
+        rect2.x += movement2.X;     
         rect2.y += movement2.Y;
 
         if (rect2.x < 0 || rect2.x + rect2.width > Raylib.GetScreenWidth())

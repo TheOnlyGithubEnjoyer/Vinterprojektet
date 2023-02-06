@@ -45,20 +45,24 @@ if (success == true)
     {
     Centered("Press Enter to Continue");
     }
+    
 }
+    else {
+        success = false;
+    }
 
 
 while (!Raylib.WindowShouldClose())
 {
 
     //LOGIK
-    if (character == 1)
+    if (character == 1)     // Depending on the character, is the type of map that will be used
     {
         space.Update();
     }
-    if (character == 2)
+    if (character == 2)       
     {
-    space2.Update();
+        space2.Update();
     }
 
     Raylib.BeginDrawing();

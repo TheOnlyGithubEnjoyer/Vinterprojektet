@@ -1,8 +1,9 @@
 public class Asteroid: GameObject
 {
 
+
 public List<Rectangle> Asteroids = new List<Rectangle>();
-List<float> AsteroidSpeed = new List<float>();
+List<float> AsteroidSpeed = new List<float>();              // List of asteroids
 Random generator = new Random();
 Texture2D AsteroidImage = Raylib.LoadTexture("Rock.png");
 
@@ -19,15 +20,14 @@ Texture2D AsteroidImage = Raylib.LoadTexture("Rock.png");
     AsteroidSpeed.Add(speed);
     }
     }
-    
         public override void Update()
         {
 
-        
     for (int i = 0; i < Asteroids.Count; i++)
     {
-    Rectangle rectangle = Asteroids[i];
-    rectangle.y += AsteroidSpeed[i];
+        Rectangle rectangle = Asteroids[i];
+        rectangle.y += AsteroidSpeed[i];
+    
 
     if (rectangle.y > Raylib.GetScreenHeight())
     {
@@ -37,16 +37,15 @@ Texture2D AsteroidImage = Raylib.LoadTexture("Rock.png");
     }
     Asteroids[i] = rectangle;
 
-
-        
-
-    Raylib.DrawTexture(AsteroidImage, (int)rectangle.x, (int)rectangle.y, Color.WHITE);
-           
-
+    Raylib.DrawTexture(AsteroidImage, (int)rectangle.x, (int)rectangle.y, Color.WHITE);        // draw asteroid
 
     }
         
+    
+        }
     }
-}
+
+    
+
   
 
